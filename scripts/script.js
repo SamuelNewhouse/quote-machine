@@ -13,9 +13,8 @@ $(document).ready(function() {
     wikiLink = quotesArray[index].wikiLink;
   }
 
-  $.getJSON("data/quotes.json", function( data ) {    
+  $.getJSON("data/quotes.json", function( data ) {
     quotesArray = data.quotesArray;
-    console.log(quotesArray);
     loadQuoteInfo();
   });  
   
@@ -27,12 +26,12 @@ $(document).ready(function() {
   });
   
   $("#tweetQuote").on("click", function() {
-    window.open("http://twitter.com/home/?status=" + curQuote + " - " + curAuthor, "_blank");
+    window.open("https://twitter.com/home/?status=" + curQuote + " - " + curAuthor, "_blank");
     window.focus();
   }); 
   
   $("#authorLink").on("click", function() {
-    window.open("http://codepen.io/SamuelNewhouse", "_blank");
+    window.open("https://github.com/SamuelNewhouse", "_blank");
     window.focus();
   }); 
 });
