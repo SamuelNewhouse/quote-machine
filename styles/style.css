@@ -5,3 +5,35 @@ dark - 333837
 medium - 484645
 yellow - d1ad58
 */
+
+header, section, nav {
+  margin-bottom: 1rem;
+}
+
+header {
+  height: 5.1rem;    
+}
+
+header img {  
+  float: right;
+}
+
+section {
+  min-height: 4rem;
+}
+
+section img:first-of-type {
+  float: left;
+}
+
+section img:last-of-type {
+  float: right;
+}
+
+nav {
+  height: 1.5rem;
+}
+
+img { 
+  max-height: 100%;  
+}
