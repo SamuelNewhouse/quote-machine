@@ -165,6 +165,9 @@ const WikiquoteApi = (function () {
         if (!quote.quote) // Some pages have title and sections but no quotes
           return Promise.reject('No quote found');
 
+        // Some quotes have HTML that needs to be removed.
+        quote.quote = $('<div>' + quote.quote + '</div>').text();
+
         var length = quote.quote.length;
         var digitPercentage = (quote.quote.match(/\d/g) || []).length / length;
 
