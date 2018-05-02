@@ -50,23 +50,28 @@ const WikiquoteApi = (() => {
           if (!result.parse) // Some pages have no valid sections
             return reject("Page has no valid section");
 
+          var removeLinks = html => $('<p>' + html + '</p>').text();
+
           var quotes = result.parse.text["*"];
           var quoteArray = []
 
           // Find top level <li> only
           var $lis = $(quotes).find('li:not(li li)');
+
           $lis.each(function () {
-            // Remove all children that aren't <b>
-            $(this).children().remove(':not(b)');
+            // Remove all children that aren't <b> or <a>
+            // Some quotes have links. Removing them here would ruin the quote
+            $(this).children().remove(':not(b,a)');
             var $bolds = $(this).find('b');
 
             // If the section has bold text, use it.  Otherwise pull the plain text.
             if ($bolds.length > 0) {
-              quoteArray.push($bolds.html());
+              quoteArray.push(removeLinks($bolds.html())); // Safe to remove links here.
             } else {
-              quoteArray.push($(this).html());
+              quoteArray.push(removeLinks($(this).html())); // Safe to remove links here.
             }
           });
+
           resolve({ titles: result.parse.title, quotes: quoteArray });
         },
 
@@ -164,9 +169,6 @@ const WikiquoteApi = (() => {
       var checkQuote = quote => {
         if (!quote.quote) // Some pages have title and sections but no quotes
           return Promise.reject('No quote found');
-
-        // Some quotes have HTML that needs to be removed.
-        quote.quote = $('<div>' + quote.quote + '</div>').text();
 
         var length = quote.quote.length;
         var digitPercentage = (quote.quote.match(/\d/g) || []).length / length;
