@@ -1,10 +1,10 @@
-const WikiquoteApi = (function () {
+const WikiquoteApi = (() => {
 
   var wqa = {};
 
   const API_URL = "https://en.wikiquote.org/w/api.php";
   const retryLimit = 10;
-  
+
   var minLength = 20;
   var maxLength = 300;
   var numericLimit = 0.1;
@@ -175,7 +175,7 @@ const WikiquoteApi = (function () {
           return Promise.reject("Quote is too short");
         else if (length > maxLength)
           return Promise.reject("Quote is too long");
-        else if (digitPercentage > numericLimit)  // Some 'quotes' are just dates and times
+        else if (digitPercentage > numericLimit)  // Some quotes are just dates and times
           return Promise.reject("Quote is too numeric");
         else
           return quote;
@@ -206,4 +206,4 @@ const WikiquoteApi = (function () {
   };
 
   return wqa;
-}());
+})();
