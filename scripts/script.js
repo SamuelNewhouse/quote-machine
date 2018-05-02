@@ -1,9 +1,11 @@
 $(function () {
-  $("button").click(getQuote);
+  $("#new-quote").click(addQuote);
 
-  function getQuote(){
-    //WikiquoteApi.getRandomQuote("Mr. Sunshine (2011 TV series)", console.log, console.log );
-    WikiquoteApi.getRandomQuote().then(console.log, console.log);
-  }
-
+  function addQuote() {
+    WikiquoteApi.getRandomQuote().then( (result) => {
+      console.log(result);
+      $("#quote").html(result.quote);
+      $("#author").html('- ' + result.title);
+    });
+  };
 });
