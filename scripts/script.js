@@ -3,6 +3,8 @@ $(function () {
   var quoteIndex = -1;
 
   $("#new-quote").click(addQuote);
+  $("#left-arrow").click(backOne);
+  $("#right-arrow").click(forwardOne);
 
   function setDisplay(info) {
     $("#quote").html(info.quote);
