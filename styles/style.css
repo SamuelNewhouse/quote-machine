@@ -46,8 +46,7 @@ header > div, section, nav {
 }
 
 section {  
-  padding-top: 0.666666rem;
-  padding-bottom: 0.666666rem;  
+  padding: 0.666666rem 0;  
   color: #d1ad58;
   border: 2px solid #464c75;
   border-style: solid none;
