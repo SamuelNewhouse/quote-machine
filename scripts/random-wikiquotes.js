@@ -17,7 +17,7 @@ const WikiquoteApi = (() => {
    * Get all quotes for a given section.  Most sections will be of the format:
    * <h3> title </h3>
    * <ul>
-   *   <li> 
+   *   <li>
    *     Quote text
    *     <ul>
    *       <li> additional info on the quote </li>
@@ -63,17 +63,10 @@ const WikiquoteApi = (() => {
           // Spaces are used to avoid accidently removing necessary space from the quote.
           // Formating tags and links must remain to avoid removing words in some cases.
           $lis.each(function () {
-            // Remove all children that aren't <b> or <a>
-            // Some quotes have links. Removing them here would ruin the quote
-            $(this).children().remove(':not(b,a)');
-            var $bolds = $(this).find('b');
-
-            // If the section has bold text, use it.  Otherwise pull the plain text.
-            if ($bolds.length > 0) {
-              quoteArray.push(removeLinks($bolds.html())); // Safe to remove links here.
-            } else {
-              quoteArray.push(removeLinks($(this).html())); // Safe to remove links here.
-            }
+            $(this).children(':not(' + tagsToKeep + ')').replaceWith(' ');
+            // Remove remaining tags without removing text contained in them.
+            // This also removes any extra spaces.
+            quoteArray.push(removeHTML($(this).html()));
           });
 
           resolve({ titles: result.parse.title, quotes: quoteArray });
@@ -83,7 +76,6 @@ const WikiquoteApi = (() => {
       });
     });
   };
-
 
   /**
   * Get the sections for a given page.
