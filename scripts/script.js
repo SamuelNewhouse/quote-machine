@@ -11,10 +11,14 @@ $(function () {
   };
 
   function addQuote() {
-    WikiquoteApi.getRandomQuote().then( (result) => {
-      console.log(result);
-      $("#quote").html(result.quote);
-      $("#author").html('- ' + result.title);
-    });
+    WikiquoteApi.getRandomQuote().then(
+      (success) => {
+        console.log(success);        
+        allQuotes.splice(quoteIndex + 1, 0, success);        
+        quoteIndex++;
+        setDisplay(success);
+      },
+      (failure) => console.log(failure)
+    );
   };
 });
