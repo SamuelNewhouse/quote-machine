@@ -1,4 +1,7 @@
 $(function () {
+  var allQuotes = [];
+  var quoteIndex = -1;
+
   $("#new-quote").click(addQuote);
 
   function addQuote() {
