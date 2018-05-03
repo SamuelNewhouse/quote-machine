@@ -118,5 +118,9 @@ a {
 }
 
 #more-info {
-  color: #90A271;
+  color: #90A271;  
+}
+#more-info a {
+  color: #90A271; 
+  text-decoration: none;
 }
