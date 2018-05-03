@@ -114,6 +114,7 @@ a {
 
 #new-quote {
   color: #d1ad58;
+  cursor: pointer;
 }
 
 #more-info {
