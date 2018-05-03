@@ -47,10 +47,11 @@ const WikiquoteApi = (() => {
         },
 
         success: result => {
-          if (!result.parse) // Some pages have no valid sections
+          if (!result.parse) // Some pages have no valid sections.
             return reject("Page has no valid section");
 
-          var removeLinks = html => $('<p>' + html + '</p>').text();
+          const tagsToKeep = 'b, strong, i, em, mark, small, del, ins, sub, sup, a';
+          const removeHTML = html => $('<p>' + html + '</p>').text();
 
           var quotes = result.parse.text["*"];
           var quoteArray = []
