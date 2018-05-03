@@ -84,8 +84,9 @@ a {
 .arrow {
   flex-shrink: 0;
   flex-grow: 0;
-  height: 40px;
-  width: 20px; 
+  height: 60px;
+  width: 16px;
+  /*visibility: hidden;*/
 }
 
 .arrow img {
