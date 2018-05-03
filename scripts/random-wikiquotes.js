@@ -59,6 +59,9 @@ const WikiquoteApi = (() => {
           // Find top level <li> only
           var $lis = $(quotes).find('li:not(li li)');
 
+          // Turn all children that aren't formatting tags or links into spaces.
+          // Spaces are used to avoid accidently removing necessary space from the quote.
+          // Formating tags and links must remain to avoid removing words in some cases.
           $lis.each(function () {
             // Remove all children that aren't <b> or <a>
             // Some quotes have links. Removing them here would ruin the quote
