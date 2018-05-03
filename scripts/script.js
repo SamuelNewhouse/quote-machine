@@ -28,4 +28,11 @@ $(function () {
       setDisplay(allQuotes[quoteIndex]);
     }
   }
+
+  function forwardOne() {
+    if (quoteIndex < allQuotes.length - 1) {
+      quoteIndex++;
+      setDisplay(allQuotes[quoteIndex]);
+    }
+  }
 });
