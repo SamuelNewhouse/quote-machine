@@ -21,4 +21,11 @@ $(function () {
       (failure) => console.log(failure)
     );
   };
+
+  function backOne() {
+    if (quoteIndex > 0) {
+      quoteIndex--;
+      setDisplay(allQuotes[quoteIndex]);
+    }
+  }
 });
