@@ -15,7 +15,6 @@ $(function () {
   function addQuote() {
     WikiquoteApi.getRandomQuote().then(
       (success) => {
-        console.log(success);        
         allQuotes.splice(quoteIndex + 1, 0, success);        
         quoteIndex++;
         setDisplay(success);
