@@ -86,7 +86,8 @@ a {
   flex-grow: 0;
   height: 60px;
   width: 16px;
-  /*visibility: hidden;*/
+  cursor: pointer;
+  visibility: hidden;
 }
 
 .arrow img {
