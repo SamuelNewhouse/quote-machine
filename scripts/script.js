@@ -36,4 +36,6 @@ $(function () {
       setDisplay(allQuotes[quoteIndex]);
     }
   }
+
+  addQuote();
 });
