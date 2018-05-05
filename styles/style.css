@@ -30,7 +30,7 @@ header, nav {
   padding-right: 30px;
 }
 
-header img {  
+header img {
   max-height: 2.75rem;
 }
 
@@ -39,38 +39,46 @@ header p {
   color:#464c75;
 }
 
-header > div, section, nav {
+header > div, nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-section {  
-  padding: 0.666666rem 0;  
+section {
+  display: flex; /* make arrows clickable above and below */
+  justify-content: space-between;
+  padding: 0.666666rem 0;
   color: #d1ad58;
   border: 2px solid #464c75;
   border-style: solid none;
-  font: normal 1.3333rem/133.33% 'Kurale', serif;  
+  font: normal 1.3333rem/133.33% 'Kurale', serif;
 }
 
-section p {  
+/* center only the arrows vertically */
+section div:not(#display) {
+  display: flex;
+  align-items: center;
+}
+
+section p {
   margin: 0;
-  padding: 0;  
+  padding: 0;
 }
 
 nav {
   height: 1.5rem;
 }
 
-img { 
-  max-height: 100%;    
+img {
+  max-height: 100%;
 }
 
 h1 {
   font-size: 3rem;
   margin: 0;
   padding: 0;
-  color: #90A271;  
+  color: #90A271;
 }
 
 h1, h2 {
@@ -84,14 +92,15 @@ a {
 .arrow {
   flex-shrink: 0;
   flex-grow: 0;
-  height: 60px;
+  align-items: stretch;
   width: 16px;
   cursor: pointer;
   visibility: hidden;
 }
 
 .arrow img {
-  vertical-align: middle;
+  height: 60px; /* Prevent stretching */
+  width: 10px;
 }
 
 #right-arrow {
@@ -105,7 +114,7 @@ a {
 }
 
 #quote {
-  margin-bottom: 0.666666rem;  
+  margin-bottom: 0.666666rem;
 }
 
 #author {
@@ -119,9 +128,9 @@ a {
 }
 
 #more-info {
-  color: #90A271;  
+  color: #90A271;
 }
 #more-info a {
-  color: #90A271; 
+  color: #90A271;
   text-decoration: none;
 }
