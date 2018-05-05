@@ -59,13 +59,14 @@ const WikiquoteApi = (() => {
           // Find top level <li> only
           var $lis = $(quotes).find('li:not(li li)');
 
-          // Turn all children that aren't formatting tags or links into spaces.
-          // Spaces are used to avoid accidently removing necessary space from the quote.
-          // Formating tags and links must remain to avoid removing words in some cases.
           $lis.each(function () {
+            // Turn all children that aren't formatting tags or links into spaces.
+            // Spaces are used to avoid accidently removing necessary space from the quote.
+            // Formating tags and links must remain to avoid removing words in some cases.
             $(this).children(':not(' + tagsToKeep + ')').replaceWith(' ');
-            // Remove remaining tags without removing text contained in them.
-            // This also removes any extra spaces.
+
+            // Remove any remaining tags without removing text contained in them.
+            // This also removes any extra spaces caused by replacing tags with spaces.
             quoteArray.push(removeHTML($(this).html()));
           });
 
