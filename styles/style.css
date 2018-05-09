@@ -47,11 +47,11 @@ header > div, nav {
 section {
   display: flex; /* make arrows clickable above and below */
   justify-content: space-between;
-  padding: 0.666666rem 0;
+  padding: 0.7rem 0;
   color: #d1ad58;
   border: 2px solid #464c75;
   border-style: solid none;
-  font: normal 1.3333rem/133.33% 'Kurale', serif;
+  font: normal 1.5rem/130% 'Kurale', serif;
 }
 
 /* center only the arrows vertically */
