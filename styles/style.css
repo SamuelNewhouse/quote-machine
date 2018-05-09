@@ -41,7 +41,6 @@ header p {
 
 header > div, nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
