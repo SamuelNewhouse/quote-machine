@@ -67,6 +67,7 @@ section p {
 
 nav {
   height: 1.5rem;
+  align-items: center;
 }
 
 img {
