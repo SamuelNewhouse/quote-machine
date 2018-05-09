@@ -89,6 +89,14 @@ a {
   color: #464c75;
 }
 
+.svg-container {
+  position: relative;
+}
+
+.svg-container object {
+  position: absolute;
+}
+
 .arrow {
   flex-shrink: 0;
   flex-grow: 0;
