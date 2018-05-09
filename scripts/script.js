@@ -22,6 +22,12 @@ $(function () {
     $("#quote").html(info.quote);
     $("#author").html('- ' + info.title);
     $("#more-info h2").html('<a href="https://www.google.com/search?q=' + info.title + '" target="_blank">More Info</a>');
+
+    var tweet = info.quote + " - " + info.title;
+    var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweet);
+    var svgDoc = document.querySelector("#twitter-logo > object").getSVGDocument();
+    svgDoc.querySelector("a").setAttribute("href", url);
+
     updateArrows();
   };
 
