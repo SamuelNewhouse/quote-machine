@@ -152,10 +152,32 @@ a {
   cursor: pointer;
 }
 
+#new-quote:hover {
+  text-decoration: underline;
+  color: #d18e58;
+
+}
+
 #more-info {
   color: #90A271;
 }
 #more-info a {
   color: #90A271;
   text-decoration: none;
+} text-decoration: underline;
+  color: #d18e58;
+
+}
+
+#more-info {
+  color: #90A271;  
+}
+#more-info a {
+  color: #90A271;
+  text-decoration: none;
+}
+
+#more-info a:hover {
+  text-decoration: underline;
+  color: #a29f71;
 }
