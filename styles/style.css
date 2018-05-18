@@ -30,10 +30,6 @@ header, nav {
   padding-right: 30px;
 }
 
-header img {
-  max-height: 2.75rem;
-}
-
 header p {
   margin: -0.75rem 0;
   color:#464c75;
@@ -68,10 +64,6 @@ section p {
 nav {
   height: 1.5rem;
   align-items: center;
-}
-
-img {
-  max-height: 100%;
 }
 
 h1 {
