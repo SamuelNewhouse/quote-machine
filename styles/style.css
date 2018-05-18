@@ -17,10 +17,6 @@ body {
   font-family: 'Bad Script', cursive;
 }
 
-header, section, nav {
-  margin-bottom: 1rem;
-}
-
 header {
   margin-bottom: 0.5rem;;
 }
@@ -41,17 +37,18 @@ header > div, nav {
 }
 
 section {
-  display: flex; /* make arrows clickable above and below */
+  display: flex;
   justify-content: space-between;
   padding: 0.7rem 0;
   color: #d1ad58;
   border: 2px solid #464c75;
   border-style: solid none;
   font: normal 1.5rem/130% 'Kurale', serif;
+  margin-bottom: 1rem;
 }
 
 /* center only the arrows vertically */
-section div:not(#display) {
+section .arrow {
   display: flex;
   align-items: center;
 }
@@ -163,18 +160,18 @@ a:hover {
 #new-quote {
   color: #d1ad58;
   cursor: pointer;
-  transition: all 500ms ease;
+  transition: color 500ms ease;
 }
 
 #new-quote:hover {
   text-decoration: underline;
   color: #d18e58;
-
 }
 
 #more-info {
-  color: #90A271;  
+  color: #90A271;
 }
+
 #more-info a {
   color: #90A271;
   text-decoration: none;
