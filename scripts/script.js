@@ -1,4 +1,4 @@
-$(function () {
+$(() => {
   var allQuotes = [];
   var quoteIndex = -1;
 
@@ -35,12 +35,12 @@ $(function () {
 
   function addQuote() {
     WikiquoteApi.getRandomQuote().then(
-      (success) => {
+      success => {
         allQuotes.splice(quoteIndex + 1, 0, success);
         quoteIndex++;
         setDisplay(success);
       },
-      (failure) => console.log(failure)
+      failure => console.log(failure)
     );
   };
 
