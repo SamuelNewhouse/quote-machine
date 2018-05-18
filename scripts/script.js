@@ -19,14 +19,16 @@ $(function () {
   };
 
   function setDisplay(info) {
+    var infoSearch = info.quote + " " + info.title;
+    var tweet = info.quote + " - " + info.title;
+    var infoUrl = "https://www.google.com/search?q=" + encodeURIComponent(infoSearch);
+    var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweet);
+
     $("#quote").html(info.quote);
     $("#author").html('- ' + info.title);
-    $("#more-info h2").html('<a href="https://www.google.com/search?q=' + info.title + '" target="_blank">More Info</a>');
-
-    var tweet = info.quote + " - " + info.title;
-    var url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweet);
-    var svgDoc = document.querySelector("#twitter-logo > object").getSVGDocument();
-    svgDoc.querySelector("a").setAttribute("href", url);
+    $("#more-info h2").html('<a href="' + infoUrl + '" target="_blank">More Info</a>');
+    $("#twitter-logo a").attr("href", twitterUrl);
+    $("#twitter-logo a").attr("target", "_blank");
 
     updateArrows();
   };
