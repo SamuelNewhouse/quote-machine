@@ -1,58 +1,183 @@
-body {
-  background-color: black;
-  color: white;
-  font-style: italic;
-  text-align: center;
-}
-div {
-  align-items: center;
-  align-content: center;
-}
-.top-div{
-  background-color: white;
-  color: black;  
-  margin-top: 60px;
-  border-radius: 40px;
-  border-style: solid;
-  border-color: #777777 #222222;  
-}
-.bottom-div{
-  margin-top: 60px;  
-}
-.quote{
-  margin-top: 50px; 
-}
-.author{
-  margin-top: 30px;
-  margin-bottom: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  display: table;
+/*
+green - 90A271
+blue - 464c75
+dark - 333837
+medium - 484645
+yellow - d1ad58
+*/
+
+html {
+  background: #333837;
 }
 
-.gray-box{
-  border-radius: 20px;
-  border-style: solid;
-  border-color: #222222 #666666;
-  background-color: #0a0a0a;
-  color: #ffffff;
+body {
+  margin: auto;
+  max-width: 800px;
+  color: white;
+  font-family: 'Bad Script', cursive;
+}
+
+header {
+  margin-bottom: 0.5rem;;
+}
+
+header, nav {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+header p {
+  margin: -0.75rem 0;
+  color:#464c75;
+}
+
+header > div, nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  color: #d1ad58;
+  border: 2px solid #464c75;
+  border-style: solid none;
+  font: normal 1.5rem/130% 'Kurale', serif;
+  margin-bottom: 1rem;
+}
+
+/* center only the arrows vertically */
+section .arrow {
+  display: flex;
+  align-items: center;
+}
+
+section p {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  height: 1.5rem;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  color: #90A271;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+a {
+  color: #464c75;
+  transition: all 500ms ease;
+}
+a:hover {
+  color: #5a4675;
+}
+
+#wikiquote-logo {
+  margin: auto 0;
+}
+
+#wikiquote-logo > svg circle {
+  pointer-events: all;
+  cursor: pointer;
+  transition: all 500ms ease;
+  transition-property: fill, stroke;
+}
+
+#wikiquote-logo a:hover g circle {
+  stroke: #000;
+}
+
+#wikiquote-logo a:hover > circle {
+  fill: #000;
+}
+
+#twitter-logo {
+  margin: auto 0;
+  pointer-events: all;
+}
+
+#twitter-logo .visible {
+  transition: all 500ms ease;
+  transition-property: fill, stroke;
+}
+
+#twitter-logo .visible:hover {
+  fill: #5a4675;
+  stroke: #a29f71;
   cursor: pointer;
 }
 
-.gray-box:hover{
-  border-radius: 20px;
-  background-color: #111111;
-  border-color: #666666 #222222;
-  color: #cfcfcf;
-  font-weight: bold; 
+.arrow {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 16px;
+  visibility: hidden;
+  cursor: pointer;
 }
 
-.gray-box:hover h3{
-  font-weight: bolder;  
+.arrow:hover path {
+  fill: #62524a;
+  stroke: #5a4675;
 }
-.pageAuthor{
-  font-size: 70%;
-  margin-top: 100px;
-  display: table;
-  border-width: 1px;
+
+.arrow path {
+  fill: #484645;
+  stroke: #464c75;
+  transition: all 300ms ease;
+  transition-property: fill, stroke;
+}
+
+/* Right align the arrow. */
+#right-arrow {
+  flex-direction: row-reverse;
+}
+
+#display {
+  align-self: flex-start;
+  flex-grow: 1;
+  padding: 0 14px;
+}
+
+#quote {
+  margin-bottom: 0.666666rem;
+}
+
+#author {
+  text-align: right;
+  color: #90A271;
+}
+
+#new-quote {
+  color: #d1ad58;
+  cursor: pointer;
+  transition: color 500ms ease;
+}
+
+#new-quote:hover {
+  text-decoration: underline;
+  color: #d18e58;
+}
+
+#more-info {
+  color: #90A271;
+}
+
+#more-info a {
+  color: #90A271;
+  text-decoration: none;
+}
+
+#more-info a:hover {
+  text-decoration: underline;
+  color: #a29f71;
 }
