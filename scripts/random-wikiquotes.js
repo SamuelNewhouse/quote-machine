@@ -1,5 +1,4 @@
 const WikiquoteApi = (() => {
-
   var wqa = {};
 
   const API_URL = "https://en.wikiquote.org/w/api.php";
@@ -60,14 +59,15 @@ const WikiquoteApi = (() => {
           var $lis = $(quotes).find('li:not(li li)');
 
           $lis.each(function () {
+            var li = $(this);
             // Turn all children that aren't formatting tags or links into spaces.
             // Spaces are used to avoid accidently removing necessary space from the quote.
             // Formating tags and links must remain to avoid removing words in some cases.
-            $(this).children(':not(' + tagsToKeep + ')').replaceWith(' ');
+            li.children(':not(' + tagsToKeep + ')').replaceWith(' ');
 
             // Remove any remaining tags without removing text contained in them.
             // This also removes any extra spaces caused by replacing tags with spaces.
-            quoteArray.push(removeHTML($(this).html()));
+            quoteArray.push(removeHTML(li.html()));
           });
 
           resolve({ titles: result.parse.title, quotes: quoteArray });
